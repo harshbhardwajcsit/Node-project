@@ -8,6 +8,7 @@ module.exports = {
     database: "postgres",
     user: "postgres",
     password: "docker",
+    dialect: "postgres",
   },
   debug: {
     stackSize: 4,
