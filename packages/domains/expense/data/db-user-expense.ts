@@ -1,5 +1,5 @@
 import { Op as operator } from "sequelize";
-import { Expense } from "../types";
+import { ExpenseDAO } from "../types";
 import { sortDirection } from "@nc/utils/types";
 
 export async function queryUserExpense(request) {
@@ -32,7 +32,7 @@ export async function queryUserExpense(request) {
 
   if (statuses) subQuery.push({ status: { [operator.in]: statuses } });
 
-  return Expense.findAll({
+  return ExpenseDAO.findAll({
     where: {
       [operator.and]: subQuery,
     },

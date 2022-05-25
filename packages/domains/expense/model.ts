@@ -1,10 +1,10 @@
-import { Expense } from "./types";
+import { UserExpense, ExpenseDAO } from "./types";
 import { BadRequest, InternalError, NotFound } from "@nc/utils/errors";
 import { to } from "@nc/utils/async";
 import { queryUserExpense } from "./data/db-user-expense";
 import { format } from "./formatter";
 
-export async function getExpenses(req): Promise<Array<Expense>> {
+export async function getExpenses(req): Promise<Array<UserExpense>> {
   if (!req.userId) {
     throw BadRequest("userId property is missing.");
   }

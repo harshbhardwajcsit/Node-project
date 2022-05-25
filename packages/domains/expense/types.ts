@@ -1,8 +1,16 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "@nc/utils/db";
-export class Expense extends Model {}
+export class ExpenseDAO extends Model {}
+export interface UserExpense {
+  id: string;
+  merchant_name: string;
+  amount_in_cents: number;
+  currency: string;
+  date_created: string;
+  status: string;
+}
 
-Expense.init(
+ExpenseDAO.init(
   {
     id: {
       type: DataTypes.UUID,
